@@ -1,8 +1,8 @@
 {
-  "name": "defiant/randomorg",
+  "name": "sofwar/randomorg",
   "description": "PHP class and Laravel implementation for Random.org",
   "keywords": ["random", "random.org"],
-  "homepage": "http://github.com/defiant/randomorg",
+  "homepage": "http://github.com/sofwar/randomorg",
   "authors": [
     {
       "name": "Sinan Taga",
