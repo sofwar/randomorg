@@ -68,7 +68,7 @@ class Random implements RandomInterface
      * @throws RuntimeException
      * @throws \Exception
      */
-    public function generateIntegers($n, $min, $max, $replacement = true, $base = 10, $signed = false)
+    public function generateIntegers($n, $min, $max, $replacement = true, $base = 10, $signed = false, $userData = null)
     {
         $params = [
             'n' => $n,
@@ -76,6 +76,7 @@ class Random implements RandomInterface
             'max' => $max,
             'replacement' => $replacement,
             'base' => $base,
+            'userData' => $userData
         ];
 
         $method = $signed ? self::SIGNED_INTEGERS : self::INTEGERS;
@@ -223,13 +224,13 @@ class Random implements RandomInterface
     public function verifySignature(array $random, $signature)
     {
         $params = [
-          'random' => $random,
-          'signature' => $signature
+            'random' => $random,
+            'signature' => $signature
         ];
 
         $result = $this->query('verifySignature', $params);
 
-        return (bool) $result['result']['authenticity'];
+        return (bool)$result['result']['authenticity'];
     }
 
 
